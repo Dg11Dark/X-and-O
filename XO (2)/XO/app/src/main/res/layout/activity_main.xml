@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.xo.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/TvWin"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:onClick="ClickGame"
+                android:tag="1" />
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn2"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:onClick="ClickGame"
+                android:tag="2" />
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn3"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:onClick="ClickGame"
+                android:tag="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:onClick="ClickGame"
+                android:tag="4" />
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn5"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:onClick="ClickGame"
+                android:tag="5" />
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn6"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:onClick="ClickGame"
+                android:tag="6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/linearLayout"
+            android:layout_below="@+id/linearLayout"
+            android:orientation="horizontal">
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn7"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:onClick="ClickGame"
+                android:tag="7" />
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn8"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_above="@+id/linearLayout"
+                android:layout_marginBottom="29dp"
+                android:layout_toEndOf="@+id/linearLayout2"
+                android:layout_weight="1"
+                android:onClick="ClickGame"
+                android:tag="8" />
+
+            <Button
+                android:textSize="60sp"
+                android:id="@+id/Btn9"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:onClick="ClickGame"
+                android:tag="9" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/BtnStart"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="35dp"
+        android:onClick="restart"
+        android:text="Start" />
+
+    <TextView
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:id="@+id/TvWin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/BtnSta"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/BtnStart"
+        android:layout_alignBottom="@+id/BtnStart"
+        android:layout_alignStart="@+id/linearLayout"
+        android:onClick="ClickGame"
+        android:text="Statistic" />
+
+</RelativeLayout>
+
+
+

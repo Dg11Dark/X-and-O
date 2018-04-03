@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.xo.Statistic">
+
+    <TextView
+        android:id="@+id/TvplayerName"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="104dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TvLastGame"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/TvplayerName"
+        android:layout_marginTop="43dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TvTotalWins"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/TvLastGame"
+        android:layout_marginTop="39dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/BtnBac"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="62dp"
+        android:layout_marginEnd="52dp"
+        android:onClick="onClick"
+        android:text="back to game" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/TvTotalWins"
+        android:layout_marginTop="44dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/BtnSc"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/BtnBac"
+        android:layout_alignBottom="@+id/BtnBac"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/BtnBac"
+        android:onClick="onClick"
+        android:text="Send Score" />
+</RelativeLayout>

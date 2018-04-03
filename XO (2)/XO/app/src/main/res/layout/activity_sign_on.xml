@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.xo.SignOn">
+
+    <EditText
+        android:id="@+id/EtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/EtPass1"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="48dp"
+        android:hint="enter username"
+        android:inputType="textWebEmailAddress" />
+
+    <EditText
+        android:id="@+id/EtPass1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/EtPass2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="25dp"
+        android:hint="enter password"
+        android:inputType="textWebPassword" />
+
+    <EditText
+        android:id="@+id/EtPass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/register"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="137dp"
+        android:ems="10"
+        android:hint="enter password"
+        android:inputType="textWebPassword" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="94dp"
+        android:onClick="reg"
+        android:text="login" />
+
+</RelativeLayout>
