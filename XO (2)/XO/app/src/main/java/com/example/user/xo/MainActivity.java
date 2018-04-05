@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
 {
     private GameClass game;
@@ -18,8 +22,9 @@ public class MainActivity extends AppCompatActivity
 
     private TextView TvWin;
     boolean winn = false;
-
-
+    MySmsReciever smsReciever;
+    SharedPreferences.Editor editor;
+    SharedPreferences myPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +32,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BtnStart = (Button) findViewById(R.id.BtnStart);
+
+        smsReciever= new MySmsReciever();
 
         buttons = new Button[]{(Button) findViewById(R.id.Btn1)
         ,(Button) findViewById(R.id.Btn2)
@@ -42,8 +49,8 @@ public class MainActivity extends AppCompatActivity
 
         game = new GameClass();
 
-        SharedPreferences.Editor editor = getSharedPreferences("myPref", MODE_PRIVATE).edit();
-        SharedPreferences myPref = getSharedPreferences("myPref", MODE_PRIVATE);
+        editor = getSharedPreferences("myPref", MODE_PRIVATE).edit();
+        myPref = getSharedPreferences("myPref", MODE_PRIVATE);
 
 
         String s1 = myPref.getString("userName","");
@@ -86,6 +93,30 @@ public class MainActivity extends AppCompatActivity
         TvWin.setText("Player turn: " + game.getCurrentPlayer());
         winn = game.checkGameOver();
         if(winn){
+            if(game.getWinner().equals("O")) {
+                int stat = Integer.parseInt(myPref.getString("O", "0"));
+                stat++;
+                editor.putString("O", stat + "");
+                editor.commit();
+            }
+            else if(game.getWinner().equals("X")) {
+                int stat = Integer.parseInt(myPref.getString("X", "0"));
+                stat++;
+                editor.putString("X", stat + "");
+                editor.commit();
+            }
+            else if(game.getWinner().equals("its a Draw!")) {
+                int stat = Integer.parseInt(myPref.getString("its a Draw!", "0"));
+                stat++;
+                editor.putString("its a Draw!", stat + "");
+                editor.commit();
+            }
+            Date c = Calendar.getInstance().getTime();
+
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            String formattedDate = df.format(c);
+            editor.putString("formattedDate", formattedDate);
+            editor.commit();
             TvWin.setText("the winner is... " + game.getWinner());
         }
     }

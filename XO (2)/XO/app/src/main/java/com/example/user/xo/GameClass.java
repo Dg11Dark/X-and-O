@@ -80,6 +80,7 @@ public class GameClass {
     }
 
     public String getWinner() {
+
         if(checkGameOver()) {
             if(Draw){
                 return "its a Draw!";

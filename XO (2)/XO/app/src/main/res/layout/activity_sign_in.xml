@@ -13,7 +13,7 @@
         android:layout_above="@+id/EtPass"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="47dp"
-        android:hint="enter username"
+        android:hint="@string/enter_username"
         android:inputType="textWebEmailAddress" />
 
     <EditText
@@ -23,7 +23,7 @@
         android:layout_above="@+id/register"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="91dp"
-        android:hint="enter password"
+        android:hint="@string/enter_password"
         android:inputType="textWebPassword" />
 
     <Button
@@ -34,6 +34,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="163dp"
         android:onClick="reg"
-        android:text="register" />
+        android:text="@string/register" />
 
 </RelativeLayout>

@@ -13,7 +13,7 @@
         android:layout_alignBaseline="@+id/BtnPick"
         android:layout_alignBottom="@+id/BtnPick"
         android:layout_toEndOf="@+id/EtName"
-        android:text="Send"
+        android:text="@string/send"
         android:onClick="onClick"/>
 
     <EditText
@@ -23,7 +23,7 @@
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="Massege"
+        android:hint="@string/massege"
         android:inputType="textPersonName" />
 
     <Button
@@ -34,7 +34,7 @@
         android:layout_marginBottom="80dp"
         android:layout_marginEnd="41dp"
         android:layout_toStartOf="@+id/BtnSend"
-        android:text="Pick"
+        android:text="@string/pick"
         android:onClick="onClick"/>
 
     <EditText
@@ -46,7 +46,7 @@
         android:layout_marginBottom="38dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="@string/name"/>
 
     <EditText
         android:id="@+id/EtPho"
@@ -55,7 +55,7 @@
         android:layout_above="@+id/EtMass"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="37dp"
-        android:text="TextView" />
+        android:hint="@string/phone_number"/>
 
 
 

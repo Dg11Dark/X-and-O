@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">XO</string>
+    <string name="title_activity_sign_on">הרשמה</string>
+    <string name="title_activity_sign_in">התחברות</string>
+    <string name="title_activity_statistic">סטטיסטיקה</string>
+    <string name="title_activity_sms">SMS</string>
+    <string name="title_activity_send_sms">שלח SMS</string>
+    <string name="player_name"> שם השחקן:</string>
+    <string name="last_game">משחק אחרון: </string>
+    <string name="total_games">סכום משחקים: </string>
+    <string name="total_x_won">נצחונות עם X: </string>
+    <string name="total_o_won">הצחונות עם O: </string>
+    <string name="game_draw_precent">אחוז תיקו: </string>
+    <string name="back_to_game">לחזור למשחק</string>
+    <string name="send_score">שלח נתונים</string>
+    <string name="start">התחל</string>
+    <string name="statistic">סטטיסטיקה</string>
+    <string name="pick">בחר איש קשר</string>
+    <string name="name">שם האיש קשר</string>
+    <string name="phone_number">מספר טלפון</string>
+    <string name="massege">הודעה</string>
+    <string name="send">שלח</string>
+    <string name="enter_username">הכנס שם משתמש</string>
+    <string name="enter_password">הכנס סיסמה</string>
+    <string name="login">התחבר</string>
+    <string name="register">הירשם</string>
+
+</resources>

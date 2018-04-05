@@ -127,7 +127,7 @@
         android:layout_below="@+id/linearLayout"
         android:layout_marginTop="35dp"
         android:onClick="restart"
-        android:text="Start" />
+        android:text="@string/start" />
 
     <TextView
         android:textAlignment="center"
@@ -147,7 +147,7 @@
         android:layout_alignBottom="@+id/BtnStart"
         android:layout_alignStart="@+id/linearLayout"
         android:onClick="ClickGame"
-        android:text="Statistic" />
+        android:text="@string/statistic" />
 
 </RelativeLayout>
 

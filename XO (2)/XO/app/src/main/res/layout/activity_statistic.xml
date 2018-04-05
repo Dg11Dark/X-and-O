@@ -1,66 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.xo.Statistic">
-
+    tools:context="com.example.user.xo.Statistic"
+    android:orientation="vertical"
+    android:gravity="start">
+<LinearLayout
+    android:layout_marginTop="50dp"
+    android:gravity="start"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_name" />
     <TextView
         android:id="@+id/TvplayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_game" />
+        <TextView
+            android:id="@+id/TvLastGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_games" />
+        <TextView
+            android:id="@+id/TvTotalWins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_x_won" />
+        <TextView
+            android:id="@+id/xwon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_o_won" />
+        <TextView
+            android:id="@+id/owon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_draw_precent" />
+        <TextView
+            android:id="@+id/drawprecent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="104dp"
-        android:text="TextView" />
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_marginEnd="20dp"
+            android:id="@+id/BtnBac"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:onClick="onClick"
+            android:text="@string/back_to_game" />
 
-    <TextView
-        android:id="@+id/TvLastGame"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/TvplayerName"
-        android:layout_marginTop="43dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/TvTotalWins"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/TvLastGame"
-        android:layout_marginTop="39dp"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/BtnBac"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="62dp"
-        android:layout_marginEnd="52dp"
-        android:onClick="onClick"
-        android:text="back to game" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/TvTotalWins"
-        android:layout_marginTop="44dp"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/BtnSc"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/BtnBac"
-        android:layout_alignBottom="@+id/BtnBac"
-        android:layout_marginEnd="30dp"
-        android:layout_toStartOf="@+id/BtnBac"
-        android:onClick="onClick"
-        android:text="Send Score" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/BtnSc"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:onClick="onClick"
+            android:text="@string/send_score" />
+    </LinearLayout>
+</LinearLayout>

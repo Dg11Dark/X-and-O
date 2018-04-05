@@ -5,4 +5,23 @@
     <string name="title_activity_statistic">Statistic</string>
     <string name="title_activity_sms">SMS</string>
     <string name="title_activity_send_sms">SendSms</string>
+    <string name="player_name">Player Name:</string>
+    <string name="last_game">Last Game:</string>
+    <string name="total_games">Total games:</string>
+    <string name="total_x_won">Total x won:</string>
+    <string name="total_o_won">Total o won:</string>
+    <string name="game_draw_precent">Game draw precent:</string>
+    <string name="back_to_game">back to game</string>
+    <string name="send_score">Send Score</string>
+    <string name="start">Start</string>
+    <string name="statistic">Statistic</string>
+    <string name="pick">Pick</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="massege">Massege</string>
+    <string name="send">Send</string>
+    <string name="enter_username">enter username</string>
+    <string name="enter_password">enter password</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
 </resources>
