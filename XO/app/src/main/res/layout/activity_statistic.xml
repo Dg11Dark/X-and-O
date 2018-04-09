@@ -133,4 +133,10 @@
             android:onClick="onClick"
             android:text="@string/send_score" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/statistika" />
 </LinearLayout>

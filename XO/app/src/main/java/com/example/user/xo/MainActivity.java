@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity
         }
         else
         {
-//            Intent login = new Intent(this, SignIn.class);
-//            startActivity(login);
+            Intent login = new Intent(this, SignIn.class);
+            startActivity(login);
         }
     }
     public void restart(View v)
@@ -149,6 +149,4 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
-
-
 }
