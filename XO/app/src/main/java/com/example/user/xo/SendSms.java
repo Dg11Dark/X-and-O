@@ -3,6 +3,7 @@ package com.example.user.xo;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -31,7 +32,9 @@ public class SendSms extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_sms);
-
+        SharedPreferences myPref = getSharedPreferences("myPref", MODE_PRIVATE);
+        String Name = myPref.getString("userName", "");
+        String totalgames = myPref.getString("totalwins", "");
         EtMass = (TextView) findViewById(R.id.EtMass);
         EtName = (TextView) findViewById(R.id.EtName);
         EtPho = (TextView) findViewById(R.id.EtPho);
@@ -39,25 +42,28 @@ public class SendSms extends AppCompatActivity implements View.OnClickListener {
         BtnSend = (Button) findViewById(R.id.BtnSend);
         BtnPick = (Button) findViewById(R.id.BtnPick);
 
-
+        EtName.setText(Name);
+        EtMass.setText(totalgames);
     }
 
     @Override
     public void onClick(View view) {
         if (view == BtnSend) {
+            if (EtPho.getText().toString().equals("")) {
+                Toast.makeText(this, "please enter a phone number", Toast.LENGTH_SHORT).show();
+            } else {
 
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) !=
+                        PackageManager.PERMISSION_GRANTED) {
 
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) !=
-                    PackageManager.PERMISSION_GRANTED) {
-
-                if (!ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.SEND_SMS))
-                    ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.SEND_SMS},
-                            MY_PERMISSIONS_REQUEST_SEND_SMS);
-                else
-                    Toast.makeText(getApplicationContext(), "you do not have permission", Toast.LENGTH_LONG).show();
+                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS))
+                        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS},
+                                MY_PERMISSIONS_REQUEST_SEND_SMS);
+                    else
+                        Toast.makeText(getApplicationContext(), "you do not have permission", Toast.LENGTH_LONG).show();
+                } else
+                    sendSMS();
             }
-            else
-                sendSMS();
         }
         if (view == BtnPick)
         {
@@ -69,9 +75,11 @@ public class SendSms extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void sendSMS() {
+        SharedPreferences myPref = getSharedPreferences("myPref", MODE_PRIVATE);
+        String Name = myPref.getString("userName", "");
         String phoNum = EtPho.getText().toString();
-        String name = EtName.getText().toString();                    /////////////&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-        String messege = EtMass.getText().toString();
+                           /////////////&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+        String messege = (EtMass.getText().toString())+"==="+Name;
         SmsManager smsMngr = SmsManager.getDefault();
         smsMngr.sendTextMessage(phoNum, null,messege,null,null);
 
@@ -100,12 +108,12 @@ public class SendSms extends AppCompatActivity implements View.OnClickListener {
 
                 cursor.moveToFirst();
                 int indexPhone = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                int indexName = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
+//                int indexName = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
 
                 phone = cursor.getString(indexPhone);
-                name = cursor.getString(indexName);
+//                name = cursor.getString(indexName);
                 EtPho.setText(phone);
-                EtName.setText(name);
+//                EtName.setText(name);
 
             } catch (Exception s) {
                 s.printStackTrace();

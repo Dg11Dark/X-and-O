@@ -52,6 +52,8 @@ private TextView TvplayerName,TvLastGame,TvTotalWins,xwon,owon,drawprecent;
         float drawPrecent = ((float)draw/(float)totalWins)*(float)100;
         drawprecent.setText(" "+drawprecent.getText()+" "+drawPrecent+" %");
         TvTotalWins.setText(" "+totalWins+"");
+        editor.putString("totalwins",totalWins+"");
+        editor.commit();
     }
     @Override
     public void onClick(View view) {
@@ -68,5 +70,9 @@ private TextView TvplayerName,TvLastGame,TvTotalWins,xwon,owon,drawprecent;
         }
     }
 
+    public void SharedBoard(View v){
+        Intent i = new Intent(this,SharedGames.class);
+        startActivity(i);
+    }
 
 }

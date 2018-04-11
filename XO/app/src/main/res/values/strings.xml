@@ -24,4 +24,5 @@
     <string name="enter_password">enter password</string>
     <string name="login">login</string>
     <string name="register">register</string>
+    <string name="share_games">Share Games</string>
 </resources>

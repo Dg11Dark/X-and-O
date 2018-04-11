@@ -22,19 +22,20 @@ public class MySmsReciever extends BroadcastReceiver {
         {
             Toast.makeText(context, "Got SMS...", Toast.LENGTH_LONG).show();
             Bundle bundle = intent.getExtras();
-            Object[] smsRes = (Object[]) bundle.get("smsRes");
+            Object[] smsRes = (Object[]) bundle.get("pdus");
             String smsPhoneNum="", smsInfo="";
+
             for (int i=0; i<smsRes.length;i++)
             {
                 SmsMessage smsMsg = SmsMessage.createFromPdu((byte[]) smsRes[i]);
                 smsPhoneNum = smsMsg.getDisplayOriginatingAddress();
-                smsInfo += smsMsg.getDisplayMessageBody()+":";
+                smsInfo += smsMsg.getDisplayMessageBody()+" ";
             }
 
             Toast.makeText(context, "Phone:"+smsPhoneNum+" Text:"+smsInfo, Toast.LENGTH_SHORT).show();
             SharedPreferences.Editor editor=myPref.edit();
-            editor.putString("phone", smsPhoneNum);
-            editor.putString("smsInfo", smsInfo);
+            editor.putString("phone", myPref.getString("phone"," ")+"\n"+ smsPhoneNum);
+            editor.putString("smsInfo",myPref.getString("smsInfo"," ")+"\n"+ smsInfo);
             editor.apply();
 
 

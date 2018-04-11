@@ -35,6 +35,7 @@ public class SignIn extends AppCompatActivity
         {
             Toast.makeText(this,"login success",Toast.LENGTH_SHORT).show();
             Intent Main = new Intent(this,MainActivity.class);
+            Main.putExtra("check",1);
             startActivity(Main);
             finish();
         }

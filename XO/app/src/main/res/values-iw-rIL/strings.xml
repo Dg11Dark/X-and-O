@@ -25,5 +25,6 @@
     <string name="enter_password">הכנס סיסמה</string>
     <string name="login">התחבר</string>
     <string name="register">הירשם</string>
+    <string name="share_games">משחקים ששותפו</string>
 
 </resources>
