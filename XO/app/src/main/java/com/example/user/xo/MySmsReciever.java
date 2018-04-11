@@ -16,32 +16,34 @@ public class MySmsReciever extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-       final SharedPreferences myPref = context.getSharedPreferences("myPref", MODE_PRIVATE);
+        final SharedPreferences myPref = context.getSharedPreferences("myPref", MODE_PRIVATE);
 
-        if (intent.getAction().equals("android.provider.Telephony.SMS_RECEIVED"))
-        {
+        if (intent.getAction().equals("android.provider.Telephony.SMS_RECEIVED")) {
             Toast.makeText(context, "Got SMS...", Toast.LENGTH_LONG).show();
             Bundle bundle = intent.getExtras();
             Object[] smsRes = (Object[]) bundle.get("pdus");
-            String smsPhoneNum="", smsInfo="";
+            String smsPhoneNum = "", smsInfo = "";
 
-            if(smsRes.indexOf(':')) {
-    for (int i = 0; i < smsRes.length; i++) {
-        SmsMessage smsMsg = SmsMessage.createFromPdu((byte[]) smsRes[i]);
-        smsPhoneNum = smsMsg.getDisplayOriginatingAddress();
-        smsInfo += smsMsg.getDisplayMessageBody() + " ";
-    }
-}
-            Toast.makeText(context, "Phone:"+smsPhoneNum+" Text:"+smsInfo, Toast.LENGTH_SHORT).show();
-            SharedPreferences.Editor editor=myPref.edit();
-            editor.putString("phone", myPref.getString("phone"," ")+"\n"+ smsPhoneNum);
-            editor.putString("smsInfo",myPref.getString("smsInfo"," ")+"\n"+ smsInfo);
+
+            for (int i = 0; i < smsRes.length; i++) {
+                SmsMessage smsMsg = SmsMessage.createFromPdu((byte[]) smsRes[i]);
+                smsPhoneNum = smsMsg.getDisplayOriginatingAddress();
+                smsInfo += smsMsg.getDisplayMessageBody() + " ";
+            }
+            if (smsInfo.indexOf(':')>=0) {
+            //if there is ':' in the text
+            Toast.makeText(context, "Phone:" + smsPhoneNum + " Text:" + smsInfo, Toast.LENGTH_SHORT).show();
+            SharedPreferences.Editor editor = myPref.edit();
+            editor.putString("phone", myPref.getString("phone", " ") + "\n" + smsPhoneNum);
+            editor.putString("smsInfo", myPref.getString("smsInfo", " ") + "\n" + smsInfo);
             editor.apply();
-
+            }else{
+                //nothing
+            }
 
         }
 
     }
 
-    }
+}
 
