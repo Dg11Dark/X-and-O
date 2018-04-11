@@ -26,4 +26,5 @@
     <string name="register">register</string>
     <string name="share_games">Share Games</string>
     <string name="sign_in">sign in</string>
+    <string name="back">Back</string>
 </resources>

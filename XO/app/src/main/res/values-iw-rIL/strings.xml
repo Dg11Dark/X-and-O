@@ -26,5 +26,6 @@
     <string name="login">התחבר</string>
     <string name="register">הירשם</string>
     <string name="share_games">משחקים ששותפו</string>
+    <string name="back">לחזור</string>
 
 </resources>

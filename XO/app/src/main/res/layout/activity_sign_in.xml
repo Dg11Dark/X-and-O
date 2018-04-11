@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="163dp"
         android:onClick="reg"
-        android:text="@string/sign_in" />
+        android:text="@string/login" />
 
     <ImageView
         android:id="@+id/imageView3"
