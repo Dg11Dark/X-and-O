@@ -25,13 +25,13 @@ public class MySmsReciever extends BroadcastReceiver {
             Object[] smsRes = (Object[]) bundle.get("pdus");
             String smsPhoneNum="", smsInfo="";
 
-            for (int i=0; i<smsRes.length;i++)
-            {
-                SmsMessage smsMsg = SmsMessage.createFromPdu((byte[]) smsRes[i]);
-                smsPhoneNum = smsMsg.getDisplayOriginatingAddress();
-                smsInfo += smsMsg.getDisplayMessageBody()+" ";
-            }
-
+            if(smsRes.indexOf(':')) {
+    for (int i = 0; i < smsRes.length; i++) {
+        SmsMessage smsMsg = SmsMessage.createFromPdu((byte[]) smsRes[i]);
+        smsPhoneNum = smsMsg.getDisplayOriginatingAddress();
+        smsInfo += smsMsg.getDisplayMessageBody() + " ";
+    }
+}
             Toast.makeText(context, "Phone:"+smsPhoneNum+" Text:"+smsInfo, Toast.LENGTH_SHORT).show();
             SharedPreferences.Editor editor=myPref.edit();
             editor.putString("phone", myPref.getString("phone"," ")+"\n"+ smsPhoneNum);
