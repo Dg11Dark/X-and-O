@@ -33,8 +33,7 @@ public class SharedGames extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick (View view){
         if (view == BtnBack) {
-            Intent Stati = new Intent(this, Statistic.class);
-            startActivity(Stati);
+            finish();
             }
         }
     }
