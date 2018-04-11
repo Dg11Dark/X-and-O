@@ -24,7 +24,7 @@ import android.widget.Toast;
 public class SendSms extends AppCompatActivity implements View.OnClickListener {
 
     private TextView EtMass, EtName, EtPho;
-    private Button BtnSend, BtnPick;
+    private Button BtnSend, BtnPick,BtnBa;
     private final int PICK_CONTACT_REQUEST = 110;
     final int MY_PERMISSIONS_REQUEST_SEND_SMS = 22;
 
@@ -41,6 +41,7 @@ public class SendSms extends AppCompatActivity implements View.OnClickListener {
 
         BtnSend = (Button) findViewById(R.id.BtnSend);
         BtnPick = (Button) findViewById(R.id.BtnPick);
+        BtnBa = (Button) findViewById(R.id.BtnBa);
 
         EtName.setText(Name);
         EtMass.setText(totalgames);
@@ -72,6 +73,12 @@ public class SendSms extends AppCompatActivity implements View.OnClickListener {
             i.setAction(Intent.ACTION_PICK);
             startActivityForResult(i, PICK_CONTACT_REQUEST);
         }
+        if(view==BtnBa)
+        {
+            Intent Stati = new Intent(this, Statistic.class);
+            startActivity(Stati);
+        }
+
     }
 
     private void sendSMS() {

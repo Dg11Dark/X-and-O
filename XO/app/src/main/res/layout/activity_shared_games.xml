@@ -13,16 +13,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 <TextView
-    android:layout_margin="10dp"
+    android:layout_margin="15dp"
     android:id="@+id/phone"
+    android:ems="13"
+    android:textSize="15sp"
     android:layout_width="130dp"
     android:layout_height="wrap_content" />
         <TextView
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
             android:id="@+id/games"
+            android:ems="13"
+            android:textSize="15sp"
             android:layout_width="130dp"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
 </ScrollView>
 </android.support.constraint.ConstraintLayout>
